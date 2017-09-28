@@ -9,12 +9,13 @@ import android.widget.TextView;
  */
 
 public class SongViewHolder extends RecyclerView.ViewHolder  {
-    TextView textViewSongListTitle;
+    TextView textViewSongListTitle, textViewSongListNumber;
     View mView;
 
     public SongViewHolder(View itemView){
         super(itemView);
         this.mView = itemView;
         textViewSongListTitle = (TextView) itemView.findViewById(R.id.textViewSongListTitle);
+        textViewSongListNumber = (TextView) itemView.findViewById(R.id.textViewSongListNumber);
     }
 }

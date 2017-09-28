@@ -52,32 +52,33 @@ public class EnglishFragment extends Fragment {
         progressBarEnglishSong = (ProgressBar) rootView.findViewById(R.id.progressBarEnglishSong);
         progressBarEnglishSong.setVisibility(View.VISIBLE);
 
-//        Query query =  db.child("Songs").orderByChild("language").equalTo("English");
-        Query query =  db.child("Songs");
+        Query query =  db.child("Songs").orderByChild("language").equalTo("English");
+//        Query query =  db.child("Songs");
 
         firebasenewsRecycleAdapter = new FirebaseRecyclerAdapter<Song, SongViewHolder>(Song.class, R.layout.song_list_item, SongViewHolder.class, query) {
             @Override
             protected void populateViewHolder(SongViewHolder viewHolder, final Song model, final int position) {
                 viewHolder.textViewSongListTitle.setText(model.getTitle());
+                viewHolder.textViewSongListNumber.setText(model.getHymnnumber());
                 progressBarEnglishSong.setVisibility(View.GONE);
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         //firebasenewsRecycleAdapter.getRef(position).removeValue();
-                        openNoticeDetailActivity(model.getSongId(), model.getTitle(), model.getHymnnumber(), model.getContent(), model.getLanguage());
+                        openSongDetailActivity(model.getSongId(), model.getTitle(), model.getHymnnumber(), model.getContent(), model.getLanguage());
                     }
                 });
             }
 
-            private void openNoticeDetailActivity(String id, String title, String hymnnumber, String content, String language) {
-//                Intent intent = new Intent(getActivity(), ViewSongActivity.class);
-//                intent.putExtra("idKey", id);
-//                intent.putExtra("titleKey", title);
-//                intent.putExtra("HymnNumberKey", hymnnumber);
-//                intent.putExtra("ContentKey", content);
-//                intent.putExtra("languageKey", language);
-//
-//                startActivity(intent);
+            private void openSongDetailActivity(String id, String title, String hymnnumber, String content, String language) {
+                Intent intent = new Intent(getActivity(), ViewSongActivity.class);
+                intent.putExtra("idKey", id);
+                intent.putExtra("titleKey", title);
+                intent.putExtra("HymnNumberKey", hymnnumber);
+                intent.putExtra("ContentKey", content);
+                intent.putExtra("languageKey", language);
+
+                startActivity(intent);
             }
         };
         rv.setLayoutManager(linearLayoutManager);
