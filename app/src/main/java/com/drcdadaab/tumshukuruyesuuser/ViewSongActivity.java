@@ -3,7 +3,12 @@ package com.drcdadaab.tumshukuruyesuuser;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 public class ViewSongActivity extends AppCompatActivity {
 
@@ -24,8 +29,17 @@ public class ViewSongActivity extends AppCompatActivity {
 
         textViewSongContent.setText (content);
 
-        getSupportActionBar().setTitle(hymnNumber+".  "+title);
+        if(TextUtils.isEmpty(hymnNumber)){
+            getSupportActionBar().setTitle(title);
+        } else{
+            getSupportActionBar().setTitle(hymnNumber+".  "+title);
+        }
 
+
+        NativeExpressAdView adView = (NativeExpressAdView)findViewById(R.id.adView);
+
+        AdRequest request = new AdRequest.Builder().addTestDevice("3664D637B9121DA640F3B3CAAD6DBA70").build();
+        adView.loadAd(request);
 
     }
 }
