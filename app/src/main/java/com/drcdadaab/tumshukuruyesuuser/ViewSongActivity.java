@@ -36,10 +36,10 @@ public class ViewSongActivity extends AppCompatActivity {
         }
 
 
-        NativeExpressAdView adView = (NativeExpressAdView)findViewById(R.id.adView);
-
-        AdRequest request = new AdRequest.Builder().addTestDevice("3664D637B9121DA640F3B3CAAD6DBA70").build();
-        adView.loadAd(request);
+//        NativeExpressAdView adView = (NativeExpressAdView)findViewById(R.id.adView);
+//
+//        AdRequest request = new AdRequest.Builder().addTestDevice("3664D637B9121DA640F3B3CAAD6DBA70").build();
+//        adView.loadAd(request);
 
     }
 }

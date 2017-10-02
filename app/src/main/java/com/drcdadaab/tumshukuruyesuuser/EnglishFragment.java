@@ -52,7 +52,8 @@ public class EnglishFragment extends Fragment {
         progressBarEnglishSong = (ProgressBar) rootView.findViewById(R.id.progressBarEnglishSong);
         progressBarEnglishSong.setVisibility(View.VISIBLE);
 
-        Query query =  db.child("Songs").orderByChild("language").equalTo("English");
+        Query query =  db.child("Songs").startAt("English").endAt("English").orderByChild("hymnnumber");
+//        Query query =  db.child("Songs").orderByChild("language").equalTo("English");
 //        Query query =  db.child("Songs");
 
         firebasenewsRecycleAdapter = new FirebaseRecyclerAdapter<Song, SongViewHolder>(Song.class, R.layout.song_list_item, SongViewHolder.class, query) {

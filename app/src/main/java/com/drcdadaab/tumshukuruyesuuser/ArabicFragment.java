@@ -54,6 +54,7 @@ public class ArabicFragment extends Fragment {
         progressBarArabicSong = (ProgressBar) rootView.findViewById(R.id.progressBarArabicSong);
         progressBarArabicSong.setVisibility(View.VISIBLE);
 
+//        Query query =  db.child("Songs").startAt("Arabic").endAt("Arabic");
         Query query =  db.child("Songs").orderByChild("language").equalTo("Arabic");
 //        Query query =  db.child("Songs");
 
