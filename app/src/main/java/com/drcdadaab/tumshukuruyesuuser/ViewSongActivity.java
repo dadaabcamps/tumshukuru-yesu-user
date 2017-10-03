@@ -12,7 +12,7 @@ import com.google.android.gms.ads.NativeExpressAdView;
 
 public class ViewSongActivity extends AppCompatActivity {
 
-    TextView textViewSongContent;
+    TextView textViewSongContent, textViewSongTitle;
     String title, content, hymnNumber;
 
     @Override
@@ -21,6 +21,7 @@ public class ViewSongActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_song);
 
         textViewSongContent = (TextView) findViewById(R.id.textViewSongContent);
+        textViewSongTitle = (TextView) findViewById(R.id.textViewSongTitle);
 
         Intent i = getIntent();
         title = i.getStringExtra("titleKey");
@@ -28,6 +29,7 @@ public class ViewSongActivity extends AppCompatActivity {
         hymnNumber = i.getStringExtra("HymnNumberKey");
 
         textViewSongContent.setText (content);
+        textViewSongTitle.setText (title);
 
         if(TextUtils.isEmpty(hymnNumber)){
             getSupportActionBar().setTitle(title);
