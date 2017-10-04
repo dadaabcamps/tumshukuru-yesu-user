@@ -55,7 +55,9 @@ public class ArabicFragment extends Fragment {
         progressBarArabicSong.setVisibility(View.VISIBLE);
 
 //        Query query =  db.child("Songs").startAt("Arabic").endAt("Arabic");
-        Query query =  db.child("Songs").orderByChild("language").equalTo("Arabic");
+//        Query query =  db.child("Songs").orderByChild("language").equalTo("Arabic");
+        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("Arabic_1000000");
+//        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("English_1");
 //        Query query =  db.child("Songs");
 
         firebasenewsRecycleAdapter = new FirebaseRecyclerAdapter<Song, SongViewHolder>(Song.class, R.layout.song_list_item, SongViewHolder.class, query) {

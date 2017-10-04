@@ -7,9 +7,10 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
 
-    <item android:id="@+id/search"
-        android:title="@string/search_title"
+    <item
+        android:id="@+id/action_search"
+        android:actionViewClass="android.widget.SearchView"
         android:icon="@mipmap/ic_search"
-        app:showAsAction="collapseActionView|ifRoom"
-        android:actionViewClass="android.widget.SearchView" />
+        android:title="@string/search_title"
+        app:showAsAction="ifRoom|collapseActionView" />
 </menu>
