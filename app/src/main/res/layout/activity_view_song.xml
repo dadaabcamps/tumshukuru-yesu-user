@@ -24,6 +24,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-1216083922847395/6497421674"></com.google.android.gms.ads.AdView>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,6 +89,8 @@
             <!--android:layout_height="200dp"-->
             <!--ads:adSize="320x150"-->
             <!--ads:adUnitId="ca-app-pub-3940256099942544/2177258514"></com.google.android.gms.ads.NativeExpressAdView>-->
+
+
         </LinearLayout>
     </ScrollView>
 

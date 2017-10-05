@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.NativeExpressAdView;
 
@@ -14,6 +15,8 @@ public class ViewSongActivity extends AppCompatActivity {
 
     TextView textViewSongContent, textViewSongTitle;
     String title, content, hymnNumber;
+    private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,11 @@ public class ViewSongActivity extends AppCompatActivity {
 
         textViewSongContent = (TextView) findViewById(R.id.textViewSongContent);
         textViewSongTitle = (TextView) findViewById(R.id.textViewSongTitle);
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("3664D637B9121DA640F3B3CAAD6DBA70").build();
+        mAdView.loadAd(adRequest);
+
 
         Intent i = getIntent();
         title = i.getStringExtra("titleKey");
