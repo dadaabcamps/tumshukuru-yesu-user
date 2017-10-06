@@ -102,6 +102,15 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
+        if (id == R.id.action_team) {
+            TeamFragment fragment = new TeamFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            return true;
+        }
+
         if (id == R.id.action_search) {
             SearchView searchView = (SearchView) item.getActionView();
 //            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

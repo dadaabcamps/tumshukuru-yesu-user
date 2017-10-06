@@ -56,7 +56,7 @@ public class ArabicFragment extends Fragment {
 
 //        Query query =  db.child("Songs").startAt("Arabic").endAt("Arabic");
 //        Query query =  db.child("Songs").orderByChild("language").equalTo("Arabic");
-        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("Arabic_1000000");
+        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("Arabic_1000000").endAt("Arabic_1100000");
 //        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("English_1");
 //        Query query =  db.child("Songs");
 

@@ -52,7 +52,7 @@ public class EnglishFragment extends Fragment {
         progressBarEnglishSong = (ProgressBar) rootView.findViewById(R.id.progressBarEnglishSong);
         progressBarEnglishSong.setVisibility(View.VISIBLE);
 
-        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("English_1");
+        Query query =  db.child("Songs").orderByChild("language_hymnumber").startAt("English_1000000").endAt("English_1100000");
 //        Query query =  db.child("Songs").orderByChild("language").equalTo("English");
 //        Query query =  db.child("Songs");
 
