@@ -98,9 +98,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         if (id == R.id.action_team) {
             TeamFragment fragment = new TeamFragment();
@@ -111,21 +111,30 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
-        if (id == R.id.action_search) {
-            SearchView searchView = (SearchView) item.getActionView();
-//            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//                @Override
-//                public boolean onQueryTextSubmit(String query) {
-//                    return false;
-//                }
-//
-//                @Override
-//                public boolean onQueryTextChange(String newText) {
-//                    return true;
-//                }
-//            });
+        if (id == R.id.action_support) {
+            SupportFragment fragment = new SupportFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
             return true;
         }
+
+//        if (id == R.id.action_search) {
+//            SearchView searchView = (SearchView) item.getActionView();
+////            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+////                @Override
+////                public boolean onQueryTextSubmit(String query) {
+////                    return false;
+////                }
+////
+////                @Override
+////                public boolean onQueryTextChange(String newText) {
+////                    return true;
+////                }
+////            });
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

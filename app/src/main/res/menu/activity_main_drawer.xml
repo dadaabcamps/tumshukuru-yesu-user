@@ -5,7 +5,7 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@mipmap/ic_book_black"
-            android:title="Tumshukuru Yesu" />
+            android:title="Shukuru Yesu" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@mipmap/ic_music_black"

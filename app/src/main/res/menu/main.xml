@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_settings"-->
+        <!--app:showAsAction="never" />-->
     <item
         android:id="@+id/action_team"
         android:orderInCategory="100"
@@ -13,9 +13,15 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_search"
-        android:actionViewClass="android.widget.SearchView"
-        android:icon="@mipmap/ic_search"
-        android:title="@string/search_title"
+        android:id="@+id/action_support"
+        android:icon="@mipmap/ic_support"
+        android:title="@string/action_support"
         app:showAsAction="ifRoom|collapseActionView" />
+
+    <!--<item-->
+        <!--android:id="@+id/action_search"-->
+        <!--android:actionViewClass="android.widget.SearchView"-->
+        <!--android:icon="@mipmap/ic_search"-->
+        <!--android:title="@string/search_title"-->
+        <!--app:showAsAction="ifRoom|collapseActionView" />-->
 </menu>
